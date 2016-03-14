@@ -104,4 +104,4 @@ Pagination.prototype.defaults = {
   onPageClick: function() {}
 }
 
-module.exports = Pagination;
+module.exports = Pagination; 
