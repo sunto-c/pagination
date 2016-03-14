@@ -26,7 +26,7 @@ Pagination.prototype.render = function() {
 
   domArr.push('<div class="fn-clear paginationBox fn-right">');
   // 总记录数，当前第几页
-  domArr.push('<span class="pagination-total-rows fn-left">' + this.options.totalRowsText.replace('{{totalPages}}', this.options.totalPages) + '</span>');
+  domArr.push('<span class="pagination-total-rows fn-left">' + this.options.totalRowsText.replace('{{totalRows}}', this.options.totalRows) + '</span>');
   domArr.push('<span class="pagination-page-number fn-left">' + this.options.currPageText.replace('{{currentPage}}', this.options.currentPage).replace('{{totalPages}}', this.options.totalPages) + '</span>');
 
   domArr.push('<ul class="pagination fn-left">')
@@ -37,8 +37,8 @@ Pagination.prototype.render = function() {
     domArr.push('<li class="disabled"><a href="javascript:;">' + this.options.previousText + '</a></li>');
   }
   else {
-    domArr.push('<li><a href="#" data-page="1">' + this.options.firstText + '</a></li>');
-    domArr.push('<li><a href="#" data-page="' + prevPage + '">' + this.options.previousText + '</a></li>');
+    domArr.push('<li><a href="javascript:;" data-page="1">' + this.options.firstText + '</a></li>');
+    domArr.push('<li><a href="javascript:;" data-page="' + prevPage + '">' + this.options.previousText + '</a></li>');
   }
 
 
@@ -59,7 +59,7 @@ Pagination.prototype.render = function() {
 
   if (startPage > 1) {
     startPage2 = startPage - 1;
-    domArr.push('<li><a href="#" data-page="' + startPage2 + '">...</a></li>');
+    domArr.push('<li><a href="javascript:;" data-page="' + startPage2 + '">...</a></li>');
   }
 
   for (var i = startPage; i <= endPage; i++) {
@@ -67,13 +67,13 @@ Pagination.prototype.render = function() {
       domArr.push('<li><a href="javascript:;" class="active">' + i + '</a></li>');
     }
     else {
-      domArr.push('<li><a href="#" data-page="' + i +'" class="">' + i + '</a></li>');
+      domArr.push('<li><a href="javascript:;" data-page="' + i +'" class="">' + i + '</a></li>');
     }
   }
 
   if (endPage < this.options.totalPages) {
     endPage2 = endPage + 1;
-    domArr.push('<li><a href="#" data-page="' + endPage2 + '">...</a></li>');
+    domArr.push('<li><a href="javascript:;" data-page="' + endPage2 + '">...</a></li>');
   }
 
   // 下一页，最后一页
@@ -82,8 +82,8 @@ Pagination.prototype.render = function() {
     domArr.push('<li class="disabled"><a href="javascript:;">' + this.options.lastText + '</a></li>');
   }
   else {
-    domArr.push('<li><a href="#" data-page="' + this.options.currentPage + 1 + '">' + this.options.nextText + '</a></li>');
-    domArr.push('<li><a href="#" data-page="' + this.options.totalPages + '">' + this.options.lastText + '</a></li>');
+    domArr.push('<li><a href="javascript:;" data-page="' + this.options.currentPage + 1 + '">' + this.options.nextText + '</a></li>');
+    domArr.push('<li><a href="javascript:;" data-page="' + this.options.totalPages + '">' + this.options.lastText + '</a></li>');
   }
 
   domArr.push('</ul></div>');
@@ -97,7 +97,7 @@ Pagination.prototype.defaults = {
   lastText: '&raquo;',
   previousText: '&lsaquo;',
   nextText: '&rsaquo;',
-  totalRowsText: '共{{totalPages}}条记录',
+  totalRowsText: '共{{totalRows}}条记录',
   currPageText: '当前{{currentPage}}/{{totalPages}}页',
   totalPages: 1,
   currentPage: 1,
