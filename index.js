@@ -77,7 +77,7 @@ Pagination.prototype.render = function() {
   }
 
   // 下一页，最后一页
-  if (this.options.currentPage = this.options.totalPages) {
+  if (this.options.currentPage === this.options.totalPages) {
     domArr.push('<li class="disabled"><a href="javascript:;">' + this.options.nextText + '</a></li>');
     domArr.push('<li class="disabled"><a href="javascript:;">' + this.options.lastText + '</a></li>');
   }
