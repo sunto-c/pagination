@@ -82,7 +82,7 @@ Pagination.prototype.render = function() {
     domArr.push('<li class="disabled"><a href="javascript:;">' + this.options.lastText + '</a></li>');
   }
   else {
-    domArr.push('<li><a href="javascript:;" data-page="' + this.options.currentPage + 1 + '">' + this.options.nextText + '</a></li>');
+    domArr.push('<li><a href="javascript:;" data-page="' + (this.options.currentPage + 1) + '">' + this.options.nextText + '</a></li>');
     domArr.push('<li><a href="javascript:;" data-page="' + this.options.totalPages + '">' + this.options.lastText + '</a></li>');
   }
 
