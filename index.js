@@ -5,6 +5,12 @@ function Pagination(options) {
 
   $(this.options.el).html(this.render());
   this._bindEvent();
+  //如果无数据则不显示分页控件
+  if(this.options.totalRows == 0){
+    $(this.options.el).hide();
+  }else {
+    $(this.options.el).show();
+  }
 }
 
 // 绑定 onPageClick 事件
